@@ -1,4 +1,4 @@
-﻿-- 책중에서 '축구의 역사'라는 도서의 출판사와 가격을 알고 싶어.
+-- 책중에서 '축구의 역사'라는 도서의 출판사와 가격을 알고 싶어.
 -- dbo는 DataBase Owner(지금은 패스)
 -- DML(4가지) 중 SELECT(조회)
 SELECT publisher, price

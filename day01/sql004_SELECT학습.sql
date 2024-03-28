@@ -1,4 +1,4 @@
-﻿-- 모든 도서의 이름과 가격을 검색하시오
+-- 모든 도서의 이름과 가격을 검색하시오
 -- Ctrl+shift+u --> 대문자 Ctrl+shift+L --> 소문자
 SELECT bookname, price
   FROM Book
