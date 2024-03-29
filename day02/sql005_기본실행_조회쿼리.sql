@@ -1,0 +1,5 @@
+SELECT TOP (1000) [bookid]
+      ,[bookname]
+      ,[publisher]
+      ,[price]
+  FROM [madang].[dbo].[Book]

@@ -20,6 +20,7 @@
 - 데이터베이스 개념
     - 데이터를 보관, 관리, 서비스하는 시스템
     - Data, Information, Knowlege 개념
+
     - DBMS > Database > Data(model)
 
 - DB언어
@@ -32,6 +33,9 @@
 - SQL 기본 학습
     - SSMS 실행
     ![SSMS로그인](https://raw.githubusercontent.com/YooChangWoo/basic-database-2024/main/images/db002.png)
+
+    - 특이사항 - SSMS 쿼리창에 소스코드 작성시 빨간색 오류 밑줄이 가끔 표현(전부 오류는 아님)
+
 - DML 학습
     - SQL 명령어 키워드 : SELECT, INSERT, UPDATE, DELETE
     - IT개발 표현언어 : Request, Create, Update, Delete(CRUD로 부름. CRU개발 뜻은 INSERT, UPDATE, SELECT를 할 수 있는 기능을 개발하라)
@@ -54,4 +58,37 @@
         - Visual Studio Code - SQL Server(mssql) 플러그인 설치하고 개발
     - ServerName(HostName) - 본인 컴퓨터이름 | 본인 네트워크 IP주소 | 127.0.0.1(LoopBack IP)|localhost(LoopBack URL)
     - 관계 데이터 모델
+        - 릴레이션 - 행과 열로 구성된 테이블
+            - 행(튜플), 열(속성), 스키마, 인스턴스 용어
+        - 테이블(실제 DB)
+            - 행(레코드), 열(컬럼, 필드), 내포(필드명), 외연(데이터)
+        - 차수(degree) - 속성의 개수
+        - 카디날리티(cardinality) - 튜플의 수
+
+    - 릴레이션 특징
+        1. 속성은 단일값을 가짐(책이름이 여러개 들어가면 안됨)
+        2. 속성은 다른 이름으로 구성(책이름이라는 속성이 두번있으면 안됨)
+        3. 속성의 값은 정의된 도메인값만 가짐(대학교 학년에 5학년이 있으면 안됨)
+        4. 속성의 순서는 상관없음
+        5. 릴레이션내 중복된 튜플 허용안함(같은 책을 정보를 두번 넣을 수 없음)
+        6. 튜플 순서는 상관없음(1,3,5,2,7,6,....)
+
+    - 관계 데이터 모델은
+        - 릴레이션(Relation)
+        - 제약조건(Contraints)
+        - 관계대수(Relational algebra)
+
 - DML 학습
+    - SELECT문
+        - 복합조건, 정렬
+        - 집계함수와 GROUP BY
+            - SUM(총합), AVG(평균), COUNT(개수), MAX(최대값)
+            - 집계함수 외 일반 컬럼은 Group By 절에 속한 컬럼만 SELECT문에 사용가능
+            - HAVING은 집계함수의 필터로 GROUP BY 뒤에 작성. WHERE절과 필터링이 다르다.
+
+        - 두개 이상의 테이블 질의(Query)
+            - 관계형 DB에서 가장 중요한 기법중 하나
+            - INNER JOIN(내부 조인) [참조](https://sql-joins.leopard.in.ua/)
+            - LEFT|RIGHT OUTER HOIN(외부 조인) - 어느 테이블이 기준인지에 따라서 결과가 상이함
+
+        ![외부조인](https://raw.githubusercontent.com/YooChangWoo/basic-database-2024/main/images/db004.png)
