@@ -18,7 +18,7 @@ SELECT Customer.[name]
 
  -- 고객별로 주문한 모든 도서의 총판매액을 구하고, 고객별로 정렬
  SELECT Customer.[name]
-	 , SUM(Orders.saleprice) AS'[판매액'
+	 , SUM(Orders.saleprice) AS [판매액]
   FROM Customer, Orders
  WHERE Customer.custid = Orders.custid
  GROUP BY Customer.[name]
@@ -41,7 +41,7 @@ SELECT Customer.[name]
 
  -- 세게 테이블 조인 - 표준 SQL이 아님
  SELECT *  -- 컬럼별로 나눠적기 생략
-   FROM Customer AS C, Orders AS O, Book AS b
+   FROM Customer AS c, Orders AS o, Book AS b
  WHERE c.custid = o.custid
    AND o.bookid = b.bookid
 
@@ -56,7 +56,9 @@ SELECT *
 -- 책 가격이 20,000원 이상인 도서를 주문한 고객의 이름과 도서명 조회
 SELECT c.[name]
      , b.bookname
+	 , o.saleprice
+	 , b.price
   FROM Customer AS c, Orders AS o, Book AS b
  WHERE c.custid = o.custid
-   AND o.bookid = b.bookid
-   AND b.price >= 20000
+   AND o.bookid = b.bookid -- 여기까진 Join을 위한 조건
+   AND b.price >= 20000; -- 그외 필터링을 위한 조건
