@@ -7,8 +7,9 @@ from PyQt5.QtGui import QCloseEvent
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import webbrowser
+from PyQt5.QtWidgets import QWidget
 ## MSSQL 연동할 라이브러리(모듈)
-import pymssql 
+import pymssql
 
 class qtApp(QMainWindow):
     def __init__(self) -> None:
@@ -17,7 +18,7 @@ class qtApp(QMainWindow):
         self.initUI()
 
     def initUI(self) -> None:
-        # Butteon 4개에 대해서 사용등록
+        # Button 4개에 대해서 사용등록
         self.btnNew.clicked.connect(self.btnNewClicked)  # 신규버튼 시그널(이벤트)에 대한 슬롯함수 생성
         self.btnSave.clicked.connect(self.btnSaveClicked) # 저장버튼
         self.btnDel.clicked.connect(self.btnDelClicked)  # 삭제버튼
@@ -25,14 +26,14 @@ class qtApp(QMainWindow):
         self.tblBooks.itemSelectionChanged.connect(self.tblBooksSelected) # 테이블위젯 결과를 클릭시 발생
         self.show()
 
-    def btnNewClicked(self):  # 신규버튼 
-       # QMessageBox.about(self, '버튼', '신규버튼이 클릭됨')
-        conn = pymssql.connect(server='127.0.0.1', user='sa', password='mssql_p@ss',database='Madang', charset='EUC-KR')
-        cursor = conn.cursor(as_dict=True)
+    def btnNewClicked(self):  # 신규버튼 클릭
+        # QMessageBox.about(self, '버튼', '신규버튼이 클릭됨')
+        conn = pymssql.connect(server='127.0.0.1', user='sa', password='mssql_p@ss', database='Madang', charset='EUC-KR')
+        cursor = conn.cursor(as_dict = True)
 
         cursor.execute('SELECT * FROM Book')
         for row in cursor:
-            print(F'bookid={row["bookid"]}, bookname = {row["bookname"]}, publisher={row["publisher"]}, price{row["price"]}')
+            print(f'bookid={row["bookid"]}, bookname={row["bookname"]}, publisher={row["publisher"]}, price={row["price"]}')
 
         conn.close()
 
@@ -45,9 +46,8 @@ class qtApp(QMainWindow):
     def btnReloadClicked(self): # 조회버튼 
         QMessageBox.about(self, '버튼', '조회버튼이 클릭됨')
 
-    def tblBooksSelected(self): # 조회버튼 테이블 위젯 내용3
-        QMessageBox.about(self, '테이블위젯', '내용변경')
-
+    def tblBooksSelected(self): # 조회결과 테이블위젯 내용 클릭 
+        QMessageBox.about(self, '테이블위젯', '내용 변경')
 
 
     # 원래 pYqT 있는 함수 CLOSEeVENT를 재정의(Override)
