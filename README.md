@@ -306,7 +306,7 @@ DML 학습
 
     <!-- md 주석. ![인덱스](https://raw.githubusercontent.com/YooChangWoo/basic-database-2024/main/images/db006.png) -->
     <!-- html img이미지 태그가 이미지 사이즈 조정 가능 -->
-    <img src="https://raw.githubusercontent.com/YooChangWoo/basic-database-2024/main/images/db006.png" width="870>
+    <img src="https://raw.githubusercontent.com/YooChangWoo/basic-database-2024/main/images/db006.png" width="870">
 
 ## 8일차
 - 인덱스 예제
