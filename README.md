@@ -332,5 +332,28 @@ DML 학습
                 - 일반 : 기본 데이터베이스 hr 선택
                 - 사용자매핑 : hr 선택, 데이터베이스 역할 멤버 : db_owner 추가 선택
 
-    2. HR사용자 로그인()
+    2. HR사용자 로그인(VS Code) - hu_user
+        - SELECT
+        - WHERE, ORDER BY
+        - FUNCTION
+        - AGGREGATE FUNC
+        - JOIN
+        - SET ...
+
+## 9일차
+- 실무실습
+    - 쿼리실습
+        - 기본 SELECT, WHERE, ORDER BY
+        - 집계함수 GROUP BY, ROLLUP
+        - JOIN, SUBQUERY, UNION ...
+        - CASE WHEN THEN END ...
+        - 내장함수 ...
+
+        ![인덱스](https://raw.githubusercontent.com/YooChangWoo/basic-database-2024/main/images/db007.png)
+
+- 공부를 더할 부분
+    - 트랜잭션 중급이상
+    - DB보안 백업과 복원
+    - 모델링 + 정규화 
+    - 데이터모델링 실습
 
