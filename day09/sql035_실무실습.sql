@@ -89,6 +89,8 @@ SELECT e.FIRST_NAME +' '+ e.LAST_NAME as 'name'
 
 -- CASE 연산자(프로그래밍적인)
 /* 107명의 직원중 HR_REP(10%), MK_REP(12%), PR_REP(15%), SA_REP(18%), IT_PROG(20%) */
+SELECT *
+  FROM employees
 
 SELECT EMPLOYEE_ID
      , FIRST_NAME +' '+ LAST_NAME as 'NAME'
